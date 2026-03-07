@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AdImage, Avatar, BrandLogo } from "@/assets";
-import { SearchInput } from "./SearchInput";
+import { SearchInput } from "../shared/SearchInput";
 import SidebarLink from "./SidebarLink";
 import { routes } from "@/lib/sidebar-routes";
 import { LogOut } from "lucide-react";
