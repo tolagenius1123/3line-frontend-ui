@@ -25,7 +25,6 @@ const SidebarLink = ({
 			)}
 		>
 			<div className="flex items-center gap-3">
-				{/* Icon */}
 				<span
 					className={cn(
 						"text-gray-500 group-hover:text-[#5F3DB3] pl-2",
@@ -35,7 +34,6 @@ const SidebarLink = ({
 					{icon}
 				</span>
 
-				{/* Label */}
 				<span
 					className={cn(
 						"text-[15px] font-medium text-gray-600 group-hover:text-[#5F3DB3]",
@@ -46,7 +44,6 @@ const SidebarLink = ({
 				</span>
 			</div>
 
-			{/* Badge */}
 			{badge && (
 				<span className="text-sm bg-gray-200 px-2 py-0.5 rounded-full text-gray-700">
 					{badge}

@@ -9,31 +9,34 @@ import { tabList } from "@/lib/data";
 import RoleCard from "@/components/shared/RoleCard";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { UserRolesTable } from "./_components/UserRolesTable";
 
 const Settings = () => {
 	const [activeRole, setActiveRole] = useState("superadmin");
 
 	return (
-		<div className="max-w-5xl mx-auto p-8 space-y-8">
+		<div className="w-full mx-auto px-2 md:px-8 pt-20 md:pt-5 space-y-8">
 			<div>
-				<h1 className="text-3xl font-semibold">Settings</h1>
+				<h1 className="text-2xl md:text-3xl font-semibold">Settings</h1>
 				<p className="text-muted-foreground mt-1">
 					Manage your team and preferences here.
 				</p>
 			</div>
 
 			<Tabs defaultValue="roles" className="w-full">
-				<TabsList className="inline-flex h-10 items-center justify-center rounded-md border border-input bg-white p-0 overflow-hidden">
-					{tabList.map((tab) => (
-						<TabsTrigger
-							key={tab}
-							value={tab.toLowerCase()}
-							className="h-full px-4 rounded-none border-r border-slate-200 last:border-r-0 data-[state=active]:bg-muted data-[state=active]:shadow-none cursor-pointer"
-						>
-							{tab}
-						</TabsTrigger>
-					))}
-				</TabsList>
+				<div className="w-full overflow-x-auto overflow-y-hidden">
+					<TabsList className="inline-flex h-10 items-center rounded-md border border-input bg-white p-0 whitespace-nowrap">
+						{tabList.map((tab) => (
+							<TabsTrigger
+								key={tab}
+								value={tab.toLowerCase()}
+								className="h-full px-4 rounded-none border-r border-slate-200 last:border-r-0 data-[state=active]:bg-muted data-[state=active]:shadow-none cursor-pointer"
+							>
+								{tab}
+							</TabsTrigger>
+						))}
+					</TabsList>
+				</div>
 			</Tabs>
 
 			<section className="space-y-6 mt-5">
@@ -158,6 +161,8 @@ const Settings = () => {
 					</Button>
 				</div>
 			</section>
+
+			<UserRolesTable />
 		</div>
 	);
 };

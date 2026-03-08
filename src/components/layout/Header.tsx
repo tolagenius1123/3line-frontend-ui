@@ -1,6 +1,6 @@
 import { BrandLogo } from "@/assets";
-import { AlignLeft } from "lucide-react";
 import Image from "next/image";
+import MobileSidebar from "./MobileSidebar";
 
 const Header = () => {
 	return (
@@ -12,7 +12,7 @@ const Header = () => {
 				</p>
 			</div>
 
-			<AlignLeft size={20} className="text-[#667085]" />
+			<MobileSidebar />
 		</div>
 	);
 };
